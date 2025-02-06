@@ -1,9 +1,11 @@
 
 pipeline {
-  agent { label 'build' }
+   agent {
+        docker { image 'openjdk:25-oraclelinux9' }
+    }
    environment { 
-        registry = "adamtravis/democicd" 
-        registryCredential = 'dockerhub' 
+        registry = "jona163922/democicd" 
+        registryCredential = 'dockertoken' 
    }
 
   stages {
