@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:25-oraclelinux9
 WORKDIR /opt/app
-COPY target/wezvatech-demo-9739110917.jar app.jar
+COPY target/jonayed.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
