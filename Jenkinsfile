@@ -1,7 +1,7 @@
 
 pipeline {
    agent {
-        docker { image 'openjdk:25-oraclelinux9' }
+        docker { image 'maven' }
     }
    environment { 
         registry = "jona163922/democicd" 
