@@ -1,8 +1,8 @@
 
 pipeline {
-   agent {
-        docker { image 'maven' }
-    }
+   //agent {
+        //docker { image 'maven' }
+    //}
 	tools {
   dockerTool 'docker'
   jdk 'jdk'
