@@ -22,9 +22,7 @@ agent any
    stage('Stage I: Build') {
       steps {
         echo "Building Jar Component ..."
-         withEnv(['MAVEN_OPTS=-Xmx2g -XX:MaxPermSize=512m']) { // Adjust memory values as needed
             sh 'mvn clean package'
-        }
       }
     }
 
