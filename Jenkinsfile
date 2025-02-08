@@ -3,6 +3,12 @@ pipeline {
    agent {
         docker { image 'maven' }
     }
+	tools {
+  dockerTool 'docker'
+  jdk 'jdk'
+  maven 'maven'
+}
+
    environment { 
         registry = "jona163922/democicd" 
         registryCredential = 'dockertoken' 
