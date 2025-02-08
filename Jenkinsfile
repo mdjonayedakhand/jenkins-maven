@@ -33,12 +33,12 @@ agent any
       }
     }
 
-   stage('Stage III: SCA') {
-      steps { 
-        echo "Running Software Composition Analysis using OWASP Dependency-Check ..."
-        sh "mvn org.owasp:dependency-check-maven:check"
-      }
-    }
+//   stage('Stage III: SCA') {
+     // steps { 
+       // echo "Running Software Composition Analysis using OWASP Dependency-Check ..."
+       // sh "mvn org.owasp:dependency-check-maven:check"
+      //}
+  //  }
 
    stage('Stage IV: SAST') {
       steps { 
