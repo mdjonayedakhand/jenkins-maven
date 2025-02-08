@@ -63,17 +63,29 @@ agent any
       //}
    // }
    
-   stage('Stage VI: Build Image') {
-      steps { 
-        echo "Build Docker Image"
-        script {
-               docker.withRegistry( '', registryCredential ) { 
-                 myImage = docker.build registry
-                 myImage.push()
+   //stage('Stage VI: Build Image') {
+    //  steps { 
+      //  echo "Build Docker Image"
+        //script {
+          //     docker.withRegistry( '', registryCredential ) { 
+            //     myImage = docker.build registry
+              //   myImage.push()
+                //}
+        //}
+      //}
+    //}
+	   stage('Build Image') {
+            steps {
+                echo "Build Docker Image"
+                script {
+                    def imageName = "${registry}:${BUILD_NUMBER}" // Image name with tag
+                    docker.withRegistry('https://index.docker.io/v1/', registryCredential) {
+                        myImage = docker.build imageName
+                        myImage.push(BUILD_NUMBER)
+                    }
                 }
+            }
         }
-      }
-    }
         
    stage('Stage VII: Scan Image ') {
       steps { 
